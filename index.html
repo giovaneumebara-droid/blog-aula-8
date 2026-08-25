@@ -4,143 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grand Line Journal - Akuma no Mi</title>
-    <style>
-        /* Estilização Geral - Paleta Preto, Vermelho e Branco */
-        body {
-            background-color: #121212; /* Fundo preto escuro */
-            color: #ffffff; /* Texto principal em branco */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Cabeçalho */
-        header {
-            background-color: #000000;
-            border-bottom: 4px solid #dc2626; /* Linha vermelha grossa */
-            padding: 30px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            color: #dc2626; /* Vermelho vibrante */
-            font-size: 2.5rem;
-            margin: 0 0 10px 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            color: #a3a3a3; /* Cinza claro */
-            margin: 0 0 20px 0;
-            font-style: italic;
-        }
-
-        /* Menu de Navegação */
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #dc2626; /* Fica vermelho ao passar o mouse */
-        }
-
-        /* Conteúdo Principal */
-        main {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* Seções como Cards */
-        section {
-            background-color: #1e1e1e; /* Fundo cinza quase preto */
-            border: 1px solid #333333;
-            border-left: 5px solid #dc2626; /* Detalhe lateral em vermelho */
-            margin-bottom: 40px;
-            padding: 25px;
-            border-radius: 4px;
-        }
-
-        h2 {
-            color: #ffffff;
-            font-size: 1.8rem;
-            margin-top: 0;
-            text-transform: uppercase;
-            border-bottom: 1px solid #dc2626;
-            padding-bottom: 10px;
-        }
-
-        h3 {
-            color: #dc2626; /* Subtítulos em Vermelho */
-            font-size: 1.3rem;
-            margin-top: 20px;
-        }
-
-        p {
-            line-height: 1.6;
-            color: #e5e5e5;
-        }
-
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
-            color: #e5e5e5;
-        }
-
-        strong {
-            color: #ffffff;
-        }
-
-        /* Estilização das Imagens */
-        .img-container {
-            text-align: center;
-            margin: 20px 0;
-            background-color: #0a0a0a;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #262626;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            max-height: 450px;
-            object-fit: contain;
-            border-radius: 4px;
-            border: 1px solid #333333;
-        }
-
-        /* Citação */
-        blockquote {
-            background-color: #0a0a0a;
-            border-left: 3px solid #dc2626;
-            padding: 15px;
-            margin: 20px 0;
-            font-style: italic;
-            color: #a3a3a3;
-        }
-
-        /* Rodapé */
-        footer {
-            background-color: #000000;
-            border-top: 2px solid #333333;
-            color: #737373;
-            text-align: center;
-            padding: 20px;
-            margin-top: 60px;
-            font-size: 0.9rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -160,7 +24,13 @@
             <p>As <strong>Akuma no Mi</strong> são frutas místicas espalhadas pelo vasto oceano de One Piece. Quem come uma dessas frutas ganha um poder sobre-humano inacreditável. No entanto, o mar rejeita o usuário: a pessoa perde completamente a capacidade de nadar, tornando-se vulnerável como uma "âncora" na água.</p>
             
             <div class="img-container">
-                <img src="<img src="https://onepiecelendas.wordpress.com/wp-content/uploads/2012/08/akuma_no_mi_by_athousandpaws-d3gy9sv.png" alt="Akuma no Mi | One Piece Lendas"/>">
+                <img src="https://onepiecelendas.wordpress.com/wp-content/uploads/2012/08/akuma_no_mi_by_athousandpaws-d3gy9sv.png" alt="Akuma no Mi | One Piece Lendas">
+            </div>
+
+            <div class="like-container">
+                <button id="like-btn" onclick="toggleLike()">
+                    ❤️ <span id="like-count">0</span> Curtidas
+                </button>
             </div>
         </section>
 
@@ -204,94 +74,6 @@
         <p>&copy; 2026 Blog de One Piece - Desenvolvido no VS Code por um Futuro Rei dos Piratas.</p>
     </footer>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post do Blog</title>
-  <style>
-    /* Estilos básicos do botão de curtir */
-    .like-container {
-      margin: 20px 0;
-      font-family: sans-serif;
-    }
-
-    #like-btn {
-      background-color: #f8f9fa;
-      border: 2px solid #e2e8f0;
-      border-radius: 20px;
-      padding: 8px 16px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      outline: none;
-    }
-
-    #like-btn:hover {
-      transform: scale(1.05);
-      background-color: #ffe4e6;
-    }
-
-    /* Estilo ativado (quando a página estiver curtida) */
-    #like-btn.liked {
-      background-color: #ffe4e6;
-      border-color: #f43f5e;
-      color: #e11d48;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="like-container">
-    <button id="like-btn" onclick="toggleLike()">
-      ❤️ <span id="like-count">0</span> Curtidas
-    </button>
-  </div>
-
-  <script>
-    // Recupera as curtidas e o estado salvo no navegador (ou inicia do zero)
-    let likes = parseInt(localStorage.getItem('page_likes')) || 0;
-    let isLiked = localStorage.getItem('page_is_liked') === 'true';
-
-    const likeBtn = document.getElementById('like-btn');
-    const likeCount = document.getElementById('like-count');
-
-    // Atualiza a interface visual
-    function updateUI() {
-      likeCount.innerText = likes;
-      if (isLiked) {
-        likeBtn.classList.add('liked');
-      } else {
-        likeBtn.classList.remove('liked');
-      }
-    }
-
-    // Alterna o estado de curtida
-    function toggleLike() {
-      if (isLiked) {
-        likes--;
-        isLiked = false;
-      } else {
-        likes++;
-        isLiked = true;
-      }
-
-      // Salva a alteração no armazenamento local do navegador
-      localStorage.setItem('page_likes', likes);
-      localStorage.setItem('page_is_liked', isLiked);
-
-      updateUI();
-    }
-
-    // Carrega os dados na tela assim que abre a página
-    updateUI();
-  </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
